@@ -37,12 +37,12 @@
                         <a href="javascript:;" class="category"><i class="glyphicon glyphicon-th-list"></i>&nbsp;<span>分类管理</span></a>
                         <div class="child" style="display: none">
                                     <a href="first.html" >一级分类</a>
-                                    <a href="second.html">二级分类</a>
+                                    <a href="two.html">二级分类</a>
                         </div>
                   </li>
                   
                   <li>
-                        <a href="product.html"><i class="glyphicon glyphicon-pencil"></i>&nbsp;<span>商品管理</span></a>
+                        <a href="products.html"><i class="glyphicon glyphicon-pencil"></i>&nbsp;<span>商品管理</span></a>
                   </li>
             </ul>
       </div>
@@ -50,7 +50,7 @@
 
 <!-- 右侧 -->
 <div class="hh_mian">
-      <!-- 头部tobbar --> 
+      <!-- 头部tobbar -->  
       <div class="hh_topbar">
             <a class="pull-left icon_menu"   href=""><i class="glyphicon glyphicon-align-justify"></i></a>
             <a class="pull-right icon_logout"  href=""><i class="glyphicon glyphicon-hand-right"></i></a>
@@ -62,6 +62,12 @@
                               <li><a href="#">管理系统</a></li>
                               <li class="active">首页</li>
                    </ol>
+
+                   <div class="hh_content">
+                        <!-- 准备两个具备宽高的容器 -->
+                        <div class="echarts_1 pull-left" id="main"></div>
+                        <div class="echarts_2 pull-right" id="main1"></div>
+                   </div>
       </div>
 
 
@@ -105,5 +111,6 @@
       <script src="./js/index.js"></script>
       <script src="./lib/nprogress/nprogress.js"></script>
       <script src="./js/common.js"></script>
+      <script src="./lib/echarts/echarts.min.js"></script>
 </body>
 </html>

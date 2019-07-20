@@ -104,7 +104,7 @@
 .hh_mian{
       padding-left: 180px;
       height: 1000px;
-      background-color:pink;
+     
       padding-top: 50px;
       transition: all 1s linear;
 }
@@ -143,7 +143,12 @@
       margin-top: 20px;
 }
 
-
-
-
+/* echearts部分 */
+.echarts_1,
+.echarts_2{
+      width: 48%;
+      height: 400px;
+      margin-top: 100px;
+     
+}
 
