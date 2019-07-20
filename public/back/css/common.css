@@ -35,7 +35,13 @@
       top:0;
       background-color: #ccc;
       z-index: 99;
+      transition: all 1s linear;
   }
+
+  .hh_aside.hidemeun {
+        left: -180px;
+  }
+
 
   .hh_aside .brand{
         height: 50px;
@@ -100,7 +106,14 @@
       height: 1000px;
       background-color:pink;
       padding-top: 50px;
+      transition: all 1s linear;
 }
+
+.hh_mian.hidemeun{
+      padding-left: 0px;
+}
+
+
 
 .hh_topbar{
       height: 50px;
@@ -110,6 +123,11 @@
       left: 0;
       top:0;
       padding-left: 180px;
+      transition: all 1s linear;
+}
+
+.hh_topbar.hidemeun{
+      padding-left: 0;
 }
 
 .hh_topbar a{
@@ -124,5 +142,8 @@
 .mt_20{
       margin-top: 20px;
 }
+
+
+
 
 
