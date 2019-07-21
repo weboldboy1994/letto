@@ -104,7 +104,6 @@
 .hh_mian{
       padding-left: 180px;
       height: 1000px;
-     
       padding-top: 50px;
       transition: all 1s linear;
 }
@@ -161,3 +160,9 @@ table td{
        vertical-align: middle!important;/* 表格垂直居中 */
 
 }
+
+
+/* 鼠标选题 时表格的hover */
+.table-hover > tbody > tr:hover {
+      background-color: #ccc;
+  }
