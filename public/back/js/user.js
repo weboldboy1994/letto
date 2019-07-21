@@ -1,7 +1,9 @@
 
 $(function(){  //入口函数
-      var currentPage=1
-      var pageSize=5
+      var currentPage=1  //当前页
+      var pageSize=5     //每页多少条
+      var currentId;    //当前选中的用户id
+      var isDelete;
 
       // 一进入页面就发送ajax请求，获取用户列表数据，通过模板引擎渲染
       render();
@@ -43,5 +45,41 @@ $(function(){  //入口函数
             })
 
       }
+
+
+      //2点击启用按钮，显示模态框，通过事件委托绑定事件
+      $('tbody').on("click",".btn",function(){
+            //显示模态框
+            $('#userModle').modal('show')
+            //获取用户id   jq中提供了获取自定义属性的方法  data()
+            currentId=$(this).parent().data("id")
+
+            //  1表示 已启用   0表示 已禁用   传给后天几，后天就设置用户状态为几
+            //如果是禁用按钮，说明需要将该用户置成禁用状态，传0
+            isDelete=$(this).hasClass("btn-danger")?0:1
+      })
+
+
+      //3点击确认按钮，发送ajax请求修改对应用户状态，需要两个参数，一个是用户id  一个是用户状态isDelete
+      $('#submitBtn').click(function(){
+            $.ajax({
+                  type:"post",
+                  url:"/user/updateUser",
+                  data:{
+                        id:currentId,
+                        isDelete:isDelete
+                  },
+                  dataType:"json",
+                  success:function(result){
+                        
+                        if(result.success){
+                              //01 关闭模态框
+                              $('#userModle').modal("hide")
+                               //02 页面要重新渲染
+                               render()
+                        }
+                  }
+            })
+      })
 
 })

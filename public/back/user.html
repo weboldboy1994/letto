@@ -96,7 +96,7 @@
 
 
 
-<!-- 模态框 -->
+<!-- 退出按钮的模态框 -->
 <!--  bootstrap 中所有的role aria  --都是给盲人设备识别的，可以直接删掉 -->
 <!-- 所有的data-属性  都是有功能的不可乱删 -->
 <!-- 给模态框添加 .modal-lg 是大号模态框  .modal-sm 是小号模态框    不添加 是中号 -->
@@ -119,6 +119,31 @@
             </div>
 
  </div>
+
+
+ <!-- 禁用按钮的模态框 -->
+      <div class="modal fade" tabindex="-1"   id="userModle">   <!-- 最外层蒙层 -->  
+
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" ><span >&times;</span></button>
+                  <h4 class="modal-title">温馨提示</h4>
+                </div>
+                <div class="modal-body">
+                  <p>确定要进行此操作吗？&hellip;</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                  <button type="button" class="btn btn-primary" id="submitBtn">确认</button>
+                </div>
+              </div>
+            </div>
+
+ </div>
+
+
+
 <!-- 模板引擎使用步骤
       1.引包
       2.准备模板
@@ -133,14 +158,18 @@
                   <td>{{ i+1 +(page-1)*size }}</td>
                   <td>{{ v.username }}</td>
                   <td>{{ v.mobile }}</td>
-                  <td>{{ v.isDelete===1?"正常":"禁用" }}</td>
+                  <td>
+                        {{ v.isDelete===1?"正常":"禁用" }}
+                  </td>
+
+                  <td data-id="{{ v.id }}">
                   {{if v.isDelete===1}}
-                  <td><button class="btn btn-danger">禁用</button></td>
+                  <button class="btn btn-danger">禁用</button></td>
                   {{/if}}
 
                   {{if v.isDelete===0}}
-                  <td><button class="btn btn-success">启用</button></td>
-                  {{/if}}
+                 <button class="btn btn-success">启用</button></<button></td>
+                 {{/if}}
 
       </tr>
       {{/each}}
