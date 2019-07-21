@@ -82,7 +82,14 @@
                    </div>
       </div>
 
+      <!-- 3.x 的 boot版本， dom结构必须使用 ul -->
+      <!-- 准备容器 -->
+      <div style="text-align: right;margin-right:15px">
+            <ul id="paginator">
 
+            </ul>
+      </div>
+     
 </div>
 
 
@@ -122,14 +129,15 @@
       <!-- i是索引  v代表对象 -->
       {{ each rows v i }}
       <tr>
-                  <td>{{ i+1 }}</td>
+            <!-- 第几个==当前页第几个+前面有多少个（前面的页数*每页条数） -->
+                  <td>{{ i+1 +(page-1)*size }}</td>
                   <td>{{ v.username }}</td>
                   <td>{{ v.mobile }}</td>
                   <td>{{ v.isDelete===1?"正常":"禁用" }}</td>
                   {{if v.isDelete===1}}
                   <td><button class="btn btn-danger">禁用</button></td>
                   {{/if}}
-                  
+
                   {{if v.isDelete===0}}
                   <td><button class="btn btn-success">启用</button></td>
                   {{/if}}
@@ -147,6 +155,7 @@
       <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
       <script src="./lib/nprogress/nprogress.js"></script>
       <script src="./lib/artTemplate/template-web.js"></script>
+      <script src="./lib/bootstrap-paginator/bootstrap-paginator.js"></script>
       <script src="./js/common.js"></script>
       <script src="./js/user.js"></script>
 </body>
