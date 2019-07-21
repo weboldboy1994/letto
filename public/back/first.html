@@ -66,7 +66,7 @@
 
                    <!-- 表格 -->
                    <div class="hh_content">
-                         <button class="btn btn-default" style="margin-bottom: 20px">添加分类</button>
+                         <button class="btn btn-default" style="margin-bottom: 20px" id="addBtn">添加分类</button>
 
                          <table class="table table-bordered table-hover">
                                <thead>
@@ -119,6 +119,36 @@
             </div>
 
  </div>
+
+<!-- 添加分页模态框 -->
+<div class="modal fade" tabindex="-1"   id="addModal">   <!-- 最外层蒙层 -->  
+
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+      <form  id="form">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" ><span >&times;</span></button>
+            <h4 class="modal-title">添加分类</h4>
+          </div>
+          <div class="modal-body">
+                  <div class="form-group">
+                      <input name="categoryName" type="text" class="form-control"  placeholder="请你输入一个类">
+                  </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="submit" class="btn btn-primary" id="">添加</button>
+          </div>
+      </form>
+
+        </div>
+      </div>
+
+</div>
+
+
+
 
 <!-- 02 准备模板-->
 <!-- rows是ajax返回来的数组  v是对象   i是索引      (page-1)*size}}是   （当前页-1）*页大小 -->
