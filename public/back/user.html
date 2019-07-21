@@ -62,6 +62,24 @@
                               <li><a href="#">管理系统</a></li>
                               <li class="active">用户管理</li>
                    </ol>
+
+                   <!--  表格 用boot来修饰   class="table"是boot样式-->  
+                   <div class="hh_content">
+                         <table class="table table-bordered table-hover">  
+                               <thead >
+                                     <tr>
+                                           <th>序号</th>
+                                           <th>用户名</th>
+                                           <th>手机号</th>
+                                           <th>状态</th>
+                                           <th>操作</th>
+                                    </tr>
+                               </thead>
+                               <tbody>
+                                    <!-- 挖坑 -->
+                               </tbody>
+                         </table>
+                   </div>
       </div>
 
 
@@ -94,6 +112,31 @@
             </div>
 
  </div>
+<!-- 模板引擎使用步骤
+      1.引包
+      2.准备模板
+      3.准备数据
+      4.将模板和数据结婚进行数据渲染
+ -->
+ <script type="text/html" id="tpl">
+      <!-- i是索引  v代表对象 -->
+      {{ each rows v i }}
+      <tr>
+                  <td>{{ i+1 }}</td>
+                  <td>{{ v.username }}</td>
+                  <td>{{ v.mobile }}</td>
+                  <td>{{ v.isDelete===1?"正常":"禁用" }}</td>
+                  {{if v.isDelete===1}}
+                  <td><button class="btn btn-danger">禁用</button></td>
+                  {{/if}}
+                  
+                  {{if v.isDelete===0}}
+                  <td><button class="btn btn-success">启用</button></td>
+                  {{/if}}
+
+      </tr>
+      {{/each}}
+ </script>
 
 
 
@@ -103,6 +146,8 @@
       <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
       <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
       <script src="./lib/nprogress/nprogress.js"></script>
+      <script src="./lib/artTemplate/template-web.js"></script>
       <script src="./js/common.js"></script>
+      <script src="./js/user.js"></script>
 </body>
 </html>

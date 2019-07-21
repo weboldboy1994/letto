@@ -152,3 +152,12 @@
      
 }
 
+
+
+/* user 页面表格 */
+table th,
+table td{
+       text-align: center; /*水平居中 */
+       vertical-align: middle!important;/* 表格垂直居中 */
+
+}
