@@ -148,6 +148,9 @@
                            </div>
                                     <!-- brandId  存储品牌 -->
                            <input type="hidden" name="brandId">
+
+                           <!-- 产品上下架，默认上架，值为1 -->
+                           <input type="hidden" name="statu">
                   </div>
 
                   <!-- 商品名称 -->
@@ -157,7 +160,7 @@
                   <!-- 商品描述 -->
                   <div class="form-group">
                         <textarea name="proDesc"  class="form-control"   placeholder="请输入商品描述" cols="30" rows="6"></textarea>
-                        <input name="proDesc" type="text" class="form-control"  placeholder="请输入商品描述">
+                        
                     </div>
                     <!-- 商品库存    -->
                     <div class="form-group">
@@ -176,19 +179,21 @@
                         <input name="price" type="text" class="form-control"  placeholder="请输入商品现价">
                     </div>
 
-
                   
                   <div class="form-group">
                         <label class="btn btn-default"   for="fileupload"  >上传图片</label>
-                        <!-- 指定name  将来后台用于接收文件 -->
-                        <!-- 指定data-url  指定后台接口地址 -->
-                        <input type="file" id="fileupload" data-url="/category/addSecondCategoryPic"  name="pic1"  style="display: none">
+                        <!-- 准备解构，需要通过插件帮我们发送文件上传请求，需要配置 name 和 data-url接口地址 
+                              指定name  将来后台用于接收文件
+                              指定data-url  指定后台接口地址
+                              multiple 多文件上传配置
+                        -->
+                        <input type="file" id="fileupload"  name="pic1" multiple  data-url="/product/addProductPic"   style="display: none">
                   </div>
                   <div class="form-group" id="imgBox">
-                           <img src="./images/logo001.png"   width="100px"  alt="">
-                           <input type="hidden" name="brandLogo">
+                           <!-- <img src="./images/logo001.png"   width="100px"  alt=""> -->
+                           <input type="hidden" name="picStatus">
                    </div>
-                  
+                   
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>

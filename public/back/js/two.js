@@ -146,7 +146,7 @@ $(function(){//入口函数
                   success:function(result){
                         console.log(result)
                   if(result.success){
-                        //关闭模态框
+                        //关闭模态框      
                   $('#addModal').modal("hide")
                         //重新渲染第一个页面
                   currentPage=1
